@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
@@ -165,7 +167,11 @@ class BMICalculatorTest {
 			coders.add(new Coder(1.82, 98.0));
 			coders.add(new Coder(1.82, 64.7));
 			double[] expected = { 18.52, 29.59, 19.53 };
+			
+			List<String> strs = new LinkedList<>();
+			strs.addLas
 
+			Arrays.stream(expected).forEach(System.out::println);
 			// when
 			double[] bmiScores = BMICalculator.getBMIScores(coders);
 
