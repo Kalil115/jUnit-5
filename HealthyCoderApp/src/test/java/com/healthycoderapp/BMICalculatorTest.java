@@ -169,7 +169,6 @@ class BMICalculatorTest {
 			double[] expected = { 18.52, 29.59, 19.53 };
 			
 			List<String> strs = new LinkedList<>();
-			strs.addLas
 
 			Arrays.stream(expected).forEach(System.out::println);
 			// when
