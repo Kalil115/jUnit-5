@@ -1,7 +1,7 @@
 package com.mockitotutorial.happyhotel.booking;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
+import static org.mockito.BDDMockito.given;
 
 import java.net.URL;
 
@@ -21,6 +21,9 @@ public class Sample02ControllerSampleTest {
 	private int port;
 
 	private URL base;
+	
+	@MockBean
+	BookingService bookingService;
 
 	@Autowired
 	private TestRestTemplate template;
@@ -34,6 +37,7 @@ public class Sample02ControllerSampleTest {
 	public void getHello() throws Exception {
 		// given
 		String expected = "Greetings from The Happy Hotel. We've got enough beds for 10 guests!";
+		given(bookingService.getAvailablePlaceCount()).willReturn(10);
 
 		// when
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
